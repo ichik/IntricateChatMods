@@ -1,0 +1,17 @@
+## Interface: 30300
+## Author: ichik
+## X-Credits: Rabbit & Ammo (SCM), Jaliborc, Funkydude, ALZA
+## Notes: Some simple chat stuff
+## Version: 0.9
+## Title: IntricateChatMods
+## X-Category: Chat/Communication
+## OptionalDeps: Blizzard_CombatLog
+
+buttons.lua
+channelnames.lua
+chatcopy.lua
+editbox.lua
+sticky.lua
+extra.lua
+timestamps.lua
+urlcopy.lua
