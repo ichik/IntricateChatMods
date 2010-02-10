@@ -2,11 +2,12 @@
 ## Author: ichik
 ## X-Credits: Rabbit & Ammo (SCM), Jaliborc, Funkydude, ALZA
 ## Notes: Some simple chat stuff
-## Version: 0.9
+## Version: 1.0
 ## Title: IntricateChatMods
 ## X-Category: Chat/Communication
 ## OptionalDeps: Blizzard_CombatLog
 
+altinvite.lua
 buttons.lua
 channelnames.lua
 chatcopy.lua
