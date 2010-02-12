@@ -21,7 +21,7 @@ CHAT_OFFICER_GET = "|Hchannel:o|ho|h %s "
 CHAT_BATTLEGROUND_GET = "|Hchannel:Battleground|hb|h %s "
 CHAT_BATTLEGROUND_LEADER_GET = "|Hchannel:Battleground|hB|h %s "
 CHAT_WHISPER_INFORM_GET = "To %s "
-CHAT_WHISPER_GET = "From %s "
+CHAT_WHISPER_GET = "from %s "
 CHAT_SAY_GET = "%s "
 CHAT_YELL_GET = "%s "
 
