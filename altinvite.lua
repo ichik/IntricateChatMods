@@ -1,11 +1,10 @@
-function altinvite(self, linkData, link, button)
-	local linkType = string.sub(link, 3, 8)
+function altinvite(self, ...)
+	local linkType, name = strmatch(tostring((...)), '(.*):(.*):.*');
         if _G.IsAltKeyDown() and linkType == "player" then
-		InviteUnit(string.sub(linkData,8,-6))
-		ChatFrameEditBox:ClearFocus()
-	end
+			InviteUnit(name)
+			ChatFrameEditBox:Hide()
+		end
 end
 for i= 1,7 do
-    local frame = _G['ChatFrame'..i]
-    frame:HookScript("OnHyperlinkClick",altinvite)
+    _G['ChatFrame'..i]:HookScript("OnHyperlinkClick",altinvite)
 end
