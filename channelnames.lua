@@ -43,7 +43,7 @@ end
 local blacklist = {             -- Blacklist for custom channel name replacing. Number is chat tab number. I advice to leave [2] = false, because otherwise you'll get loads of garbage
     [1] = false,                -- "false" means do not blacklist tab
     [2] = true,                 -- Combatlog
-    [3] = false,
+    [3] = true,
     [4] = true,
     [5] = true,
     [6] = true,
