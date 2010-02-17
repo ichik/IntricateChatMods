@@ -12,8 +12,8 @@ buttons.lua
 channelnames.lua
 chatcopy.lua
 editbox.lua
-sticky.lua
 extra.lua
+sticky.lua
 timestamps.lua
 ttell.lua
 urlcopy.lua
