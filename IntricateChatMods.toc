@@ -1,6 +1,6 @@
 ## Interface: 30300
 ## Author: ichik
-## X-Credits: Rabbit & Ammo (SCM), Jaliborc, Funkydude, ALZA, P3lim
+## X-Credits: Rabbit & Ammo (SCM), Jaliborc, Funkydude, ALZA, Nightcracker
 ## Notes: Some simple chat stuff
 ## Version: 1.01
 ## Title: IntricateChatMods
