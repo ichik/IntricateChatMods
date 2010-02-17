@@ -1,6 +1,6 @@
 ## Interface: 30300
 ## Author: ichik
-## X-Credits: Rabbit & Ammo (SCM), Jaliborc, Funkydude, ALZA
+## X-Credits: Rabbit & Ammo (SCM), Jaliborc, Funkydude, ALZA, P3lim
 ## Notes: Some simple chat stuff
 ## Version: 1.01
 ## Title: IntricateChatMods
@@ -15,4 +15,5 @@ editbox.lua
 sticky.lua
 extra.lua
 timestamps.lua
+ttell.lua
 urlcopy.lua
