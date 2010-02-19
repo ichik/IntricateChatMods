@@ -2,7 +2,7 @@
 ## Author: ichik
 ## X-Credits: Rabbit & Ammo (SCM), Jaliborc, Funkydude, ALZA, Nightcracker
 ## Notes: Some simple chat stuff
-## Version: 1.02
+## Version: 1.02a
 ## Title: IntricateChatMods
 ## X-Category: Chat/Communication
 ## OptionalDeps: Blizzard_CombatLog
