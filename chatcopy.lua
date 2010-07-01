@@ -65,8 +65,8 @@ local function Copy(cf)
     editBox:SetText(text)
 end
 
-for i = 1, 7 do
-    local cf = _G["ChatFrame"..i]
+for i = 1, 10 do
+    local cf = _G[format("%s%d", "ChatFrame", i)]
     local button = CreateFrame("Button", "BCMButtonCF"..i, cf)
     button:SetPoint(unpack(ButtonPoint))
     button:SetHeight(ButtonSize)
@@ -82,7 +82,7 @@ for i = 1, 7 do
     t:SetText(ButtonText)
     
     button:SetAlpha(0)
-    local tab = _G["ChatFrame"..i.."Tab"]
+    local tab = _G[format("%s%d", "ChatFrame", i, "Tab")]
     tab:HookScript("OnShow", function() button:SetAlpha(1) end)
     tab:HookScript("OnHide", function() button:SetAlpha(0) end)
 end
