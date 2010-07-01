@@ -40,20 +40,10 @@ local function AddMessage(frame, text, ...)
     return hooks[frame](frame, text, ...)
 end
 
-local blacklist = {             -- Blacklist for custom channel name replacing. Number is chat tab number. I advice to leave [2] = false, because otherwise you'll get loads of garbage
-    [1] = false,                -- "false" means do not blacklist tab
-    [2] = true,                 -- Combatlog
-    [3] = true,
-    [4] = true,
-    [5] = true,
-    [6] = true,
-    [7] = true,
-}
-
-for i = 1, 7 do
-    h = _G["ChatFrame"..i]
-    if(not blacklist[i]==true) then
-        hooks[h] = h.AddMessage
-        h.AddMessage = AddMessage
-    end
+for i = 1, 10 do
+	if i ~= 2 then -- skip combatlog
+		h = _G[format("%s%d", "ChatFrame", i)]
+		hooks[format("%s%d", "ChatFrame", i)] = h.AddMessage
+		h.AddMessage = AddMessage
+	end
 end
