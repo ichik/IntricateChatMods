@@ -6,7 +6,7 @@ local _G = getfenv(0)
 _G["DEFAULT_CHATFRAME_ALPHA"] = 0
 
 --Disable Fade
-for i = 1, 7 do
-    local cf = getglobal('ChatFrame'..i)    
+for i = 1, 10 do
+    local cf = _G[format("%s%d", "ChatFrame", i)]
     cf:SetFading(false)
 end
