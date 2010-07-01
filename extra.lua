@@ -7,6 +7,6 @@ _G["DEFAULT_CHATFRAME_ALPHA"] = 0
 
 --Disable Fade
 for i = 1, 10 do
-    local cf = _G[format("%s%d", "ChatFrame", i)]
+    local cf = _G["ChatFrame"..i]
     cf:SetFading(false)
 end

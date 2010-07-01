@@ -1,8 +1,8 @@
 --[[ Edit box]]--
 do
 	for i =1, 10 do
-		local eb =  _G[format("%s%d%s", "ChatFrame", i, "EditBox")]
-		local cf = _G[format("%s%d", "ChatFrame", i)]
+		local eb =  _G[format("ChatFrame"..i.."EditBox"]
+		local cf = _G["ChatFrame"..i]
 		eb:ClearAllPoints()
 		eb:SetPoint("BOTTOMLEFT",  cf, "TOPLEFT",  -5, 0)
 		eb:SetPoint("BOTTOMRIGHT", cf, "TOPRIGHT", 5, 0)

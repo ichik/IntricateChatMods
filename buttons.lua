@@ -6,14 +6,15 @@ local function Hide(f)
 end
 
 local function UpdateBottomButton(frame)
-	local button = _G[frame:GetName() .. 'BottomButton']
-	if frame:AtBottom() then
-		button:Hide()
-	else
-		button:ClearAllPoints()
-		button:SetPoint('TOPRIGHT', frame, 'TOPRIGHT', 0, 0)
-		button:Show()
-	end
+	if frame:AtBottom() and frame.BottomButton:IsVisible() then
+		frame.BottomButton:Hide()
+		UIFrameFlashRemoveFrame(frame.BottomButtonFlash)
+	elseif not frame:AtBottom() and not frame.BottomButton:IsVisible() then
+		frame.BottomButton:ClearAllPoints()
+ 		frame.BottomButton:SetPoint('TOPRIGHT', frame, 'TOPRIGHT', 0, 0)
+		frame.BottomButton:Show()
+		UIFrameFlash(frame.BottomButtonFlash, 0, 0, -1, false, CHAT_BUTTON_FLASH_TIME, CHAT_BUTTON_FLASH_TIME)
+	end   
 end
 
 local function OnMouseWheel(frame, value)
@@ -38,17 +39,17 @@ local function OnClick(button)
 end
 
 for i= 1,10 do
-	local frame = _G[format("%s%d%s", "ChatFrame", i]
+	local frame = _G["ChatFrame"..i]
 	frame:SetScript('OnMouseWheel', OnMouseWheel)
 	frame:HookScript('OnShow', UpdateBottomButton)
 	frame:EnableMouseWheel()
 	
-	local button = _G[format("%s%d%s", "ChatFrame", i, 'ButtonFrameBottomButton']
+	local button = _G["ChatFrame"..i.."ButtonFrameBottomButton"]
 	button:HookScript('OnClick', OnClick)
 	button:SetAlpha(.6)
 	
-	Hide(_G[format("%s%d%s", "ChatFrame", i, 'ButtonFrameUpButton'])
-	Hide(_G[format("%s%d%s", "ChatFrame", i, 'ButtonFrameDownButton'])
+	Hide(_G["ChatFrame"..i..'ButtonFrameUpButton'])
+	Hide(_G["ChatFrame"..i..'ButtonFrameDownButton'])
 	UpdateBottomButton(frame)
 	frame:SetClampRectInsets(0,0,0,0) --Allow the chat frame to move to the end of the screen
 end

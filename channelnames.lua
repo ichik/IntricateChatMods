@@ -42,8 +42,8 @@ end
 
 for i = 1, 10 do
 	if i ~= 2 then -- skip combatlog
-		h = _G[format("%s%d", "ChatFrame", i)]
-		hooks[format("%s%d", "ChatFrame", i)] = h.AddMessage
+		h = _G["ChatFrame"..i]
+		hooks["ChatFrame"..i] = h.AddMessage
 		h.AddMessage = AddMessage
 	end
 end
