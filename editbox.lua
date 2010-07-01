@@ -1,13 +1,16 @@
-local eb = ChatFrameEditBox
-eb:ClearAllPoints()
-eb:SetAltArrowKeyMode(false)
-eb:SetPoint("BOTTOMLEFT",  ChatFrame1, "TOPLEFT", -5, 18)
-eb:SetPoint("BOTTOMRIGHT", ChatFrame1, "TOPRIGHT", 5, 18)
-
-local a, b, c = select(6, eb:GetRegions())
-a:Hide(); b:Hide(); c:Hide()
-
-local ebbg = eb:CreateTexture(nil, "BACKGROUND")
-ebbg:SetPoint("BOTTOMRIGHT", -5, 5)
-ebbg:SetPoint("TOPLEFT", 5, -5)
-ebbg:SetTexture(0, 0, 0, 0)
+--[[ Edit box]]--
+do
+	for i =1, 10 do
+		local eb =  _G[format("%s%d%s", "ChatFrame", i, "EditBox")]
+		local cf = _G[format("%s%d", "ChatFrame", i)]
+		eb:ClearAllPoints()
+		eb:SetPoint("BOTTOMLEFT",  cf, "TOPLEFT",  -5, 0)
+		eb:SetPoint("BOTTOMRIGHT", cf, "TOPRIGHT", 5, 0)
+		eb:SetAltArrowKeyMode(false)local a, b, c = select(6, eb:GetRegions())
+		a:Hide(); b:Hide(); c:Hide()
+		local ebbg = eb:CreateTexture(nil, "BACKGROUND")
+		ebbg:SetPoint("BOTTOMRIGHT", -5, 5)
+		ebbg:SetPoint("TOPLEFT", 5, -5)
+		ebbg:SetTexture(0, 0, 0, 0)
+	end
+end
