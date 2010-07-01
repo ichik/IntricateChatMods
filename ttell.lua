@@ -17,7 +17,7 @@ local function telltarget(msg)
 	end
 end
 
-ChatFrameEditBox:HookScript("OnTextChanged", function(self)
+ChatFrame1EditBox:HookScript("OnTextChanged", function(self)
 	local text = self:GetText()
 	if text:len() < 5 then
 		if text:sub(1, 4) == "/tt " then
