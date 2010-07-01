@@ -22,6 +22,7 @@ US = true,
 KO = true,
 CH = true,
 TW = true,
+UA = true,
 }
 local style = "|cffffffff|Hurl:%s|h[%s]|h|r"
 local tokennum, matchTable = 1, {}
@@ -124,4 +125,3 @@ do
 		hideOnEscape = 1,
 	}
 end
-
