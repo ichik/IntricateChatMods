@@ -31,20 +31,21 @@ CHAT_FLAG_AFK = "[AFK] "
 CHAT_FLAG_DND = "[DND] "
 CHAT_FLAG_GM = "[GM] "
 
-local str = "%d|h %3$s" -- gives: 1 Otravi: Hi
-local channel = function(...)
-	return str:format(...)
+local replaceschan = {
+   ['(%d+)%. .-'] = '%1',
+}
+local AddMessageOriginal
+local function AddMessageHook(frame, text, ...)
+    for k,v in pairs(replaceschan) do
+        text = text:gsub('|h%['..k..'%]|h', '|h'..v..'|h')
+    end
+    return AddMessageOriginal(frame, text, ...)
 end
-
-local function AddMessage(frame, text, ...)
-	text = text:gsub('|Hchannel:(%d+)|h%[?(.-)%]?|h.+(|Hplayer.+)', channel)
-	return hooks[frame:GetName()](frame, text, ...)
-end
-
-for i = 1, 10 do
-	if i ~= 2 then -- skip combatlog
-		local h = _G[format("%s%d", "ChatFrame", i)]
-		hooks[format("%s%d", "ChatFrame", i)] = h.AddMessage
-        h.AddMessage = AddMessage
-	end
-end
+    
+for i = 1, NUM_CHAT_WINDOWS do
+    if ( i ~= 2 ) then
+    local frame = _G["ChatFrame"..i]
+        AddMessageOriginal = frame.AddMessage
+        frame.AddMessage = AddMessageHook
+    end
+end 
