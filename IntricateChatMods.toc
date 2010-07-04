@@ -1,8 +1,8 @@
 ## Interface: 30300
 ## Author: ichik
-## X-Credits: Rabbit & Ammo (SCM), Jaliborc, Funkydude, ALZA, Nightcracker
+## X-Credits: Rabbit & Ammo (SCM), Jaliborc, Funkydude, ALZA, Nightcracker, Turkoid, Fernir
 ## Notes: Some simple chat stuff
-## Version: 1.1
+## Version: 1.15
 ## Title: IntricateChatMods
 ## X-Category: Chat/Communication
 ## OptionalDeps: Blizzard_CombatLog
