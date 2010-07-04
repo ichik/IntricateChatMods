@@ -80,9 +80,4 @@ for i = 1, 10 do
     t:SetJustifyH("CENTER")
     t:SetJustifyV("CENTER")
     t:SetText(ButtonText)
-    
-    button:SetAlpha(0)
-    local tab = _G["ChatFrame"..i.."Tab"]
-    tab:HookScript("OnShow", function() button:SetAlpha(1) end)
-    tab:HookScript("OnHide", function() button:SetAlpha(0) end)
 end
