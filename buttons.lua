@@ -1,16 +1,42 @@
-ChatFrameMenuButton:UnregisterAllEvents()
-ChatFrameMenuButton:Hide()
-ChatFrameMenuButton.Show = dummy
-_G['FriendsMicroButton']:UnregisterAllEvents()
-_G['FriendsMicroButton']:Hide()
-_G['FriendsMicroButton'].Show = dummy
+local function Hide(f)
+	f:SetScript('OnShow', f.Hide)
+	f:Hide()
+end
 
+--[[ Moving Buttons ]]--
+
+local function UpdateBottomButton(frame)
+	local button = frame.buttonFrame.bottomButton
+	if frame:AtBottom() then
+		button:Hide()
+	else
+		button:Show()
+	end
+end
+
+local function OnClick(button)
+	UpdateBottomButton(button:GetParent():GetParent())
+end
+
+hooksecurefunc('FloatingChatFrame_OnMouseScroll', UpdateBottomButton)
 for i= 1,10 do
-	local frame = _G["ChatFrame"..i]
-	_G["ChatFrame"..i..'ButtonFrameUpButton'].Hide()
-	_G["ChatFrame"..i..'ButtonFrameUpButton'].Show = dummy
-	_G["ChatFrame"..i..'ButtonFrameDownButton'].Hide()
-	_G["ChatFrame"..i..'ButtonFrameDownButton'].Show = dummy
+	local frame = _G['ChatFrame'..i]
+	frame:HookScript('OnShow', UpdateBottomButton)
+	
+	local buttons = frame.buttonFrame
+	buttons:DisableDrawLayer('BACKGROUND')
+	buttons:DisableDrawLayer('BORDER')
+	
+	local bottom = buttons.bottomButton
+	bottom:SetPoint('BOTTOMRIGHT', frame, 'BOTTOMRIGHT')
+	bottom:HookScript('OnClick', OnClick)
+	bottom:SetAlpha(.6)
+	
+	Hide(buttons.upButton)
+	Hide(buttons.downButton)
 	UpdateBottomButton(frame)
 	frame:SetClampRectInsets(0,0,0,0) --Allow the chat frame to move to the end of the screen
 end
+
+Hide(ChatFrameMenuButton)
+Hide(FriendsMicroButton)
