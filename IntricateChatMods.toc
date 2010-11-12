@@ -2,7 +2,7 @@
 ## Author: ichik
 ## X-Credits: Rabbit, Ammo, Jaliborc, Funkydude, ALZA, Nightcracker, Turkoid, Fernir, Haste, Mightily
 ## Notes: Some simple chat stuff
-## Version: 1.2
+## Version: 1.21
 ## Title: IntricateChatMods
 ## X-Category: Chat/Communication
 ## OptionalDeps: Blizzard_CombatLog
@@ -13,7 +13,6 @@ channelnames.lua
 chatcopy.lua
 editbox.lua
 extra.lua
-scroll.lua
 sticky.lua
 ttell.lua
 urlcopy.lua
